@@ -10,9 +10,9 @@ export default class Customer {
    private _active: boolean = false;
    private _rewardPoints: number = 0;
 
-   private eventDispatcher: EventDispatcher;
+   private eventDispatcher: EventDispatcher | null;
 
-    constructor(id: string, name: string, eventDispacher: EventDispatcher) {
+    constructor(id: string, name: string, eventDispacher: EventDispatcher | null = null){
         this._id = id;
         this._name = name;
         this.validate();
@@ -65,7 +65,9 @@ export default class Customer {
             name: this.name,
             address: this._address
         });
-        this.eventDispatcher.notify(customerAddressChangedEvent);
+        if (this.eventDispatcher) {
+            this.eventDispatcher.notify(customerAddressChangedEvent);
+        }
     }
 
     activate(){
