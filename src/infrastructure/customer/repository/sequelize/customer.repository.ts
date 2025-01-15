@@ -14,7 +14,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface{
             street: item.Address.street,
             number: item.Address.number,
             zipcode: item.Address.zip,
-            city: item.Address.city
+            city: item.Address.city            
         });
     }
 

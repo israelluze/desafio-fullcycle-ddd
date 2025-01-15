@@ -46,9 +46,7 @@ export default class Customer {
         
         if(this._name.length == 0){
             throw new Error("Name is required");
-        }
-
-        
+        }  
 
         return true;
     }   
@@ -74,6 +72,7 @@ export default class Customer {
         if (this._address === undefined) {
             throw new Error("Address is mandatory to activate a customers");
         }
+
         this._active = true;
     }
 

@@ -9,6 +9,7 @@ export default class Address {
         this._street = street;
         this._city = city;        
         this._zip = zip;   
+        this._number = number;
         this.validate()
     }
 
@@ -30,7 +31,7 @@ export default class Address {
 
     validate(){
         if (this._street.length == 0) {
-            return false;
+            throw new Error("Street is required");
         }
         if (this._city.length == 0) {
             return false;
