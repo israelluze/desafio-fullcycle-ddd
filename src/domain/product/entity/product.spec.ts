@@ -21,6 +21,12 @@ describe("Product unit tests", () => {
         }).toThrow("Price cannot be negative");
     });
 
+    it("should throw error when id is empty and name is empty and price is negative", () => {
+        expect(() => {
+            const product = new Product("", "", -100);
+        }).toThrow("product: Id is required,product: Name is required,product: Price cannot be negative");
+    });
+
     it("should change name", () => {
         expect(() => {
             const product = new Product("1", "Product 1", 100);
